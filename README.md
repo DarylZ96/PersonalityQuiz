@@ -1,6 +1,8 @@
 # PersonalityQuiz
 
-#1 The first screen will let you start the personality quiz.
+#1 The first screen will let you start the personality quiz. ![FirstScreen](/doc/FirstScreen.png)
+
+
 
 #2 The second screen shows the first question which consists of four single answers.
 
