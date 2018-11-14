@@ -1,6 +1,6 @@
 # PersonalityQuiz
 
-#1 The first screen will let you start the personality quiz. ![FirstScreen](/doc/FirstScreen.png)
+#1 The first screen will let you start the personality quiz. ![FirstQuestion](/doc/FirstQuestion.png)
 
 
 
