@@ -289,12 +289,6 @@
                             <constraint firstItem="Rgj-HM-qcK" firstAttribute="top" secondItem="yYJ-wK-fXm" secondAttribute="top" id="yvb-he-hKJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="x6E-l9-9K3"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="Jd4-8e-E7x"/>
-                                <exclude reference="2yw-Xp-NAD"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="Ysr-5S-RSS"/>
                     <connections>
