@@ -47,6 +47,8 @@ class QuestionViewController: UIViewController {
     var questionIndex = 0
      var answersChosen: [Answer] = []
     
+    // Question types + answers
+    
     var questions: [Question] = [
     Question(text: "Do you like being on your own?",
          type:.single,
@@ -76,7 +78,7 @@ class QuestionViewController: UIViewController {
                        type: .whale),
                 Answer(text: "I love it", type: .dog)
         ])
-]
+    ]
 
 
     
@@ -86,32 +88,36 @@ class QuestionViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+   
+    // Update the UI according to the right question type
     
- func updateUI() {
-    singleStackView.isHidden = true
-    multipleStackView.isHidden = true
-    rangedStackView.isHidden = true
-    
-    
-    let currentQuestion = questions[questionIndex]
-    let currentAnswers = currentQuestion.answers
-    let totalProgress = Float(questionIndex) / Float(questions.count)
-    
-    
-    navigationItem.title = "Question #\(questionIndex+1)"
-    questionLabel.text = currentQuestion.text
-    progressView.setProgress(totalProgress, animated: true)
-    
-    
-    switch currentQuestion.type {
-        case .single:
-            updateSingleStack(using: currentAnswers)
-        case .multiple:
-            updateMultipleStack(using: currentAnswers)
-        case .ranged:
-            updateRangedStack(using: currentAnswers)
+    func updateUI() {
+        singleStackView.isHidden = true
+        multipleStackView.isHidden = true
+        rangedStackView.isHidden = true
+        
+        
+        let currentQuestion = questions[questionIndex]
+        let currentAnswers = currentQuestion.answers
+        let totalProgress = Float(questionIndex) / Float(questions.count)
+        
+        
+        navigationItem.title = "Question #\(questionIndex+1)"
+        questionLabel.text = currentQuestion.text
+        progressView.setProgress(totalProgress, animated: true)
+        
+        
+        switch currentQuestion.type {
+            case .single:
+                updateSingleStack(using: currentAnswers)
+            case .multiple:
+                updateMultipleStack(using: currentAnswers)
+            case .ranged:
+                updateRangedStack(using: currentAnswers)
+            }
         }
-    }
+    
+    // Update the answers of the questions
     
     func updateSingleStack(using answers: [Answer]) {
         singleStackView.isHidden = false
@@ -119,7 +125,7 @@ class QuestionViewController: UIViewController {
         singleButton2.setTitle(answers[1].text, for: .normal)
         singleButton3.setTitle(answers[2].text, for: .normal)
         singleButton4.setTitle(answers[3].text, for: .normal)
-}
+    }
 
     func updateMultipleStack(using answers: [Answer]) {
         multipleStackView.isHidden = false
@@ -161,34 +167,34 @@ class QuestionViewController: UIViewController {
     }
     
 
-@IBAction func multipleAnswerButtonPressed() {
-    let currentAnswers = questions[questionIndex].answers
-        if multiSwitch1.isOn {
-            answersChosen.append(currentAnswers[0])
-            }
-        if multiSwitch2.isOn {
-                answersChosen.append(currentAnswers[1])
-            }
-        if multiSwitch3.isOn {
-                answersChosen.append(currentAnswers[2])
-            }
-        if multiSwitch4.isOn {
-                answersChosen.append(currentAnswers[3])
-            }
-            nextQuestion()
+    @IBAction func multipleAnswerButtonPressed() {
+        let currentAnswers = questions[questionIndex].answers
+            if multiSwitch1.isOn {
+                answersChosen.append(currentAnswers[0])
+                }
+            if multiSwitch2.isOn {
+                    answersChosen.append(currentAnswers[1])
+                }
+            if multiSwitch3.isOn {
+                    answersChosen.append(currentAnswers[2])
+                }
+            if multiSwitch4.isOn {
+                    answersChosen.append(currentAnswers[3])
+                }
+                nextQuestion()
+        
+        }
     
-    }
     
-    
-@IBAction func rangedAnswerButtonPressed() {
-    let currentAnswers = questions[questionIndex].answers
+    @IBAction func rangedAnswerButtonPressed() {
+        let currentAnswers = questions[questionIndex].answers
 
-    let index = Int(round(rangedSlider.value * Float(currentAnswers.count - 1)))
+        let index = Int(round(rangedSlider.value * Float(currentAnswers.count - 1)))
 
-    answersChosen.append(currentAnswers[index])
-   
-    nextQuestion()
-    }
+        answersChosen.append(currentAnswers[index])
+       
+        nextQuestion()
+        }
     
     
     func nextQuestion () {
@@ -202,6 +208,8 @@ class QuestionViewController: UIViewController {
         
     }
     
+    // pas the data to the resultscreen
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ResultsSegue" {
             let resultsViewController = segue.destination as! ResultsViewController
@@ -213,14 +221,3 @@ class QuestionViewController: UIViewController {
     
     
 }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-
