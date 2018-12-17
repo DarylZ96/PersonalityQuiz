@@ -6,12 +6,17 @@
 4 The third question is presented on the fourth screen where you will select the most relevant scale. 
 5 The final screen shows the results after you completed the quiz! 
 
+Extra features:
+
+- Layout changes
+
 ### Screenshots in chronological order 
 
 
-![StartScreen](/doc/StartScreen.png) ![FirstQuestion](/doc/FirstQuestion.png)![SecondQuestion](/doc/SecondQuestion.png)
+![StartScreen](/doc/StartScreen.png) ![FirstQuestion](/doc/FirstQuestion.png)
 
-![ThirdQuestion](/doc/ThirdQuestion.png) ![ResultScreen](/doc/ResultScreen.png)
+![SecondQuestion](/doc/SecondQuestion.png)![ThirdQuestion](/doc/ThirdQuestion.png)
+![ResultScreen](/doc/ResultScreen.png)
 
 
 
