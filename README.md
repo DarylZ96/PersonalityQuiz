@@ -15,7 +15,7 @@ Extra features:
 
 ![StartScreen](/doc/StartScreen.png) ![FirstQuestion](/doc/FirstQuestion.png)
 
-![SecondQuestion](/doc/SecondQuestion.png)![ThirdQuestion](/doc/ThirdQuestion.png)
+![SecondQuestion](/doc/SecondQuestion.png) ![ThirdQuestion](/doc/ThirdQuestion.png)
 ![ResultScreen](/doc/ResultScreen.png)
 
 
